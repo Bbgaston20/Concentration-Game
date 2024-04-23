@@ -32,8 +32,24 @@ const cards = [
     }
     return shuffled;
   }
+  const renderBoard = () => {
+    board.innerHTML = '';
+    cards.forEach((_, index) => {
+      cards= document.createElement('div');
+      cards.classList.add('card');
+      cards.dataset.index = index;
+      cards.textContent = cards[index] || '';
+      cards.addEventListener('click', handleCardClick);
+      board.appendChild(cards);
+    });
+  };
   
-  
+  // const handleCardClick = (event) => {
+  //   const clickedCard = event.target;
+  //   const index = clickedCard.dataset.index;
+  //   if ()
+  // }
+
   function flipCard(card) {
     if (flippedCards.length < 2 && !flippedCards.includes(card) && !matchedCards.includes(card)) {
       card.classList.add('flipped');
@@ -57,7 +73,7 @@ const cards = [
         card1.classList.remove('flipped');
         card2.classList.remove('flipped');
         flippedCards = [];
-      }, 1000);
+      }, 300);
     }
   }
   
