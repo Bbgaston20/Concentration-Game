@@ -1,11 +1,6 @@
-. {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 body {
     height: 100vh;
+    width: 100vw;
     background-color: lightblue;
 }
 h1 {
@@ -13,6 +8,26 @@ h1 {
     font-weight: 700;
     font-size: xx-large;
 }
+.board {
+    display: grid;
+    justify-content: center;
+    grid-gap: 16px;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(2, 100px);
+  }
+  .card {
+    width: 100px;
+    height: 100px;
+    background-color: aliceblue;
+    margin: 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out;
+  }  
+  
 p {
     text-align: center;
     font-size: 30px;
