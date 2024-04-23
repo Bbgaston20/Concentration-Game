@@ -49,7 +49,7 @@ const cards = [
     }
   }
   
-  function init() {
+  function startGame() {
     const shuffledCards = shuffle(cards.concat(cards)); 
     const gameBoard = document.getElementById('board');
     shuffledCards.forEach(card => {
@@ -57,5 +57,5 @@ const cards = [
     });
   }
   
-  init();
+  startGame();
   
