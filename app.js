@@ -1,26 +1,38 @@
 const cards = [
-    
+    {matched: false, img: "../img/IMG_3877.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3877.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3878.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3878.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3879.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3879.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3880.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3880.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3881.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3881.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3882.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3882.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3883.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3883.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3884.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3884.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3885.JPG", showFront: false},
+    {matched: false, img: "../img/IMG_3885.JPG", showFront: false},
   ]; 
-  let flippedCards = [];
-  let matchedCards = [];
+  const backOfCard = "../img/vecteezy_flowers-clipart-design-illustration_9385587.jpg"
+  let score;
+  let shuffledCards;
   
-  function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+  function shuffle() {
+    const gameCards = cards.map(card => {return{...card}})
+    const shuffled = []; 
+    while (gameCards.length > 0) {
+      const randomNum = Math.floor(Math.random() * gameCards.length);
+      const card = gameCards.splice(randomNum, 1)
+      shuffled.push(card[0])
     }
-    return array;
+    return shuffled;
   }
   
-  function createCard(card) {
-    const div = document.createElement('div');
-    div.classList.add('card');
-    const img = document.createElement('img');
-    img.src = card;
-    div.appendChild(img);
-    div.addEventListener('click', () => flipCard(div));
-    return div;
-  }
   
   function flipCard(card) {
     if (flippedCards.length < 2 && !flippedCards.includes(card) && !matchedCards.includes(card)) {
@@ -50,12 +62,16 @@ const cards = [
   }
   
   function startGame() {
-    const shuffledCards = shuffle(cards.concat(cards)); 
-    const gameBoard = document.getElementById('board');
-    shuffledCards.forEach(card => {
-      gameBoard.appendChild(createCard(card));
-    });
+     shuffledCards = shuffle(); 
+    render()
   }
   
   startGame();
   
+function render() {
+  shuffledCards.forEach((card, ind) => {
+    const cardEl = document.getElementById(ind)
+    if (card.matched || card.showFront) cardEl.innerHTML = `<img class = "front-img" src= "${card.img}"/>`
+    else cardEl.innerHTML = `<img class= "back-img" src= "${backOfCard}"/>`
+  });
+}

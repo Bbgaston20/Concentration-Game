@@ -27,7 +27,7 @@ h1 {
     transform-style: preserve-3d;
     transition: all 0.5s ease-in-out;
   }  
-  
+
 p {
     text-align: center;
     font-size: 30px;
@@ -36,4 +36,10 @@ p {
 .restart-button {
     display: flex;
     justify-content: center;
+}
+.back-img {
+    max-width: 5vw;
+}
+.front-img {
+    max-width: 5vw;
 }
