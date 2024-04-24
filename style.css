@@ -2,6 +2,7 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: lightblue;
+    position: relative;
 }
 h1 {
     text-align: center;
@@ -19,9 +20,14 @@ h2, h3 {
 #board {
     display: grid;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+    width: 690px;
     grid-gap: 16px;
     grid-template-columns: repeat(6, 100px);
     grid-template-rows: repeat(2, 100px);
+    position: relative;
   }
   .card {
     width: 100px;
@@ -48,4 +54,8 @@ p {
 }
 .front-img {
     max-width: 5vw;
+}
+.bottom {
+    position: relative;
+    z-index: 10;
 }

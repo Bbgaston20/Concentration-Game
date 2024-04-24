@@ -31,6 +31,7 @@ const cards = [
   const scoreEl = document.getElementById("score")
   const restartEl = document.getElementById("restart")
   const winnerEl = document.getElementById("winner")
+  const confettiEl = document.getElementById("Layer_1")
   boardEl.addEventListener("click", handleclick)
   restartEl.addEventListener("click", startGame)
   
@@ -61,9 +62,9 @@ const cards = [
     }
   
     startGame();
-  
+ 
   function startGame() {
-    clearTimeout(timer)
+    clearTimeout(timer);
       timer = setTimeout(function(){
         loser = true
         render();
@@ -82,7 +83,11 @@ function render() {
     else cardEl.innerHTML = `<img class= "back-img" src= "${backOfCard}"/>`
   });
   scoreEl.innerHTML = score
-  if (winner === true) winnerEl.innerHTML = "Congratulations! You won!"
+  if (winner === true) {
+    winnerEl.innerHTML = "Congratulations! You won!"
+    confettiEl.style.display = "initial"
+    confettiEl.style.position = "absolute"
+}
   if (winner === false) winnerEl.innerHTML = "Good luck!"
   if (loser === true) winnerEl.innerHTML = "You lost"
  if(card1 && card2) {
