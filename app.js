@@ -21,6 +21,12 @@ const cards = [
   const backOfCard = "../img/vecteezy_flowers-clipart-design-illustration_9385587.jpg"
   let score;
   let shuffledCards;
+  let card1;
+  let card2;
+  let winner;
+
+  const boardEl = document.getElementById("board")
+  boardEl.addEventListener("click", handleclick)
   
   function shuffle() {
     const gameCards = cards.map(card => {return{...card}})
@@ -32,50 +38,19 @@ const cards = [
     }
     return shuffled;
   }
-  const renderBoard = () => {
-    board.innerHTML = '';
-    cards.forEach((_, index) => {
-      cards= document.createElement('div');
-      cards.classList.add('card');
-      cards.dataset.index = index;
-      cards.textContent = cards[index] || '';
-      cards.addEventListener('click', handleCardClick);
-      board.appendChild(cards);
-    });
-  };
-  
-  // const handleCardClick = (event) => {
-  //   const clickedCard = event.target;
-  //   const index = clickedCard.dataset.index;
-  //   if ()
-  // }
-
-  function flipCard(card) {
-    if (flippedCards.length < 2 && !flippedCards.includes(card) && !matchedCards.includes(card)) {
-      card.classList.add('flipped');
-      flippedCards.push(card);
-      if (flippedCards.length === 2) {
-        checkForMatch();
-      }
-    }
-  }
   
   function checkForMatch() {
-    const [card1, card2] = flippedCards;
-    if (card1.firstChild.src === card2.firstChild.src) {
-      matchedCards.push(card1, card2);
-      flippedCards = [];
-      if (matchedCards.length === cards.length) {
-        return('Congratulations! You win!');
-      }
-    } else {
-      setTimeout(() => {
-        card1.classList.remove('flipped');
-        card2.classList.remove('flipped');
-        flippedCards = [];
-      }, 300);
+    if (card1.img===card2.img)  {
+      card1.matched = true 
+      card2.matched = true
     }
-  }
+    card1.showFront = false
+    card2.showFront = false
+    card1 = null
+    card2 = null
+    render()
+      winner = checkForWinner()
+    }
   
   function startGame() {
      shuffledCards = shuffle(); 
@@ -90,4 +65,33 @@ function render() {
     if (card.matched || card.showFront) cardEl.innerHTML = `<img class = "front-img" src= "${card.img}"/>`
     else cardEl.innerHTML = `<img class= "back-img" src= "${backOfCard}"/>`
   });
+ if(card1 && card2) {
+  setTimeout(() => {
+    checkForMatch()
+     }, 3000)
 }
+}
+
+function handleclick(event) {
+  if (card1 && card2) return
+  let index;
+  if (event.target.tagName==="DIV")index = event.target.id
+  if (event.target.tagName==="IMG")index = event.target.parentNode.id
+  if (!card1){
+    card1=shuffledCards[index]
+    card1.showFront=true
+  } else {
+    card2=shuffledCards[index]
+    card2.showFront=true
+   
+  }
+  render()
+}
+
+function checkForWinner() {
+  const isWinner = cards.every(card => card.matched);
+  if (isWinner) {
+    confirm("Congratulations! You won!")
+  } 
+}
+checkForWinner();
