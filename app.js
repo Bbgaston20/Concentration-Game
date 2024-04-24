@@ -24,9 +24,16 @@ const cards = [
   let card1;
   let card2;
   let winner;
+  let loser;
+  let timer;
 
   const boardEl = document.getElementById("board")
+  const scoreEl = document.getElementById("score")
+  const restartEl = document.getElementById("restart")
+  const winnerEl = document.getElementById("winner")
   boardEl.addEventListener("click", handleclick)
+  restartEl.addEventListener("click", startGame)
+  
   
   function shuffle() {
     const gameCards = cards.map(card => {return{...card}})
@@ -43,21 +50,30 @@ const cards = [
     if (card1.img===card2.img)  {
       card1.matched = true 
       card2.matched = true
+      score +=1
     }
     card1.showFront = false
     card2.showFront = false
     card1 = null
     card2 = null
+    winner = checkForWinner();
     render()
-      winner = checkForWinner()
     }
   
-  function startGame() {
-     shuffledCards = shuffle(); 
-    render()
-  }
+    startGame();
   
-  startGame();
+  function startGame() {
+    clearTimeout(timer)
+      timer = setTimeout(function(){
+        loser = true
+        render();
+      },180000)
+      score = 0 
+      winner = false
+      loser = false
+      shuffledCards = shuffle();
+      render();
+  }
   
 function render() {
   shuffledCards.forEach((card, ind) => {
@@ -65,6 +81,10 @@ function render() {
     if (card.matched || card.showFront) cardEl.innerHTML = `<img class = "front-img" src= "${card.img}"/>`
     else cardEl.innerHTML = `<img class= "back-img" src= "${backOfCard}"/>`
   });
+  scoreEl.innerHTML = score
+  if (winner === true) winnerEl.innerHTML = "Congratulations! You won!"
+  if (winner === false) winnerEl.innerHTML = "Good luck!"
+  if (loser === true) winnerEl.innerHTML = "You lost"
  if(card1 && card2) {
   setTimeout(() => {
     checkForMatch()
@@ -89,9 +109,6 @@ function handleclick(event) {
 }
 
 function checkForWinner() {
-  const isWinner = cards.every(card => card.matched);
-  if (isWinner) {
-    confirm("Congratulations! You won!")
-  } 
+  const isWinner = shuffledCards.every(card => card.matched);
+  return isWinner
 }
-checkForWinner();
