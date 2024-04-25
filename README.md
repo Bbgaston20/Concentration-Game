@@ -1,8 +1,11 @@
-<div align="center">
-#Concentration-Game
-####By Brittany B Gaston
-![Concentration Game](https://imgur.com/g1xgNYn)
+# Concentration Game
+### By Brittany B Gaston
 
+<div id="header" align="center">
+
+  <img src="https://imgur.com/XRnEoxa" width="800" height="400">
+
+</div>
 
 <p>Concentration is a round game in which all of the cards are laid face down on a surface and two cards are flipped face up over each turn. The object of the game is to turn over pairs of matching cards. The matching pairs are removed frrom play after being found and the person with the most matching pairs at the end of the game wins.
 Concentration can be played as a group or as a solitare game.
@@ -17,12 +20,13 @@ Concentration is often used to improve memory or as an educational game for youn
 
 [Concentration Game Site](https://bbgaston20.github.io/Concentration-Game/)
 
-###Technologies Used:
+### Technologies Used:
 ![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript) ![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5) ![CSS3](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3)
 
-###Next Steps and Improvements: 
-*Mobile optimization
-*Optional background music
-*More Animations for the cards 
+### Next Steps and Improvements:
+- Mobile optimization
+- Optional background music
+- More card animations
 
 [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Bbgaston20) [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/brittany-b-gaston)
+</div>
