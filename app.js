@@ -65,6 +65,7 @@ const cards = [
  
   function startGame() {
     clearTimeout(timer);
+    confettiEl.style.display = "none";
       timer = setTimeout(function(){
         loser = true
         render();
