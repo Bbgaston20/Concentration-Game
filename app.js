@@ -1,24 +1,24 @@
 const cards = [
-    {matched: false, img: "./img/IMG_3877.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3877.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3878.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3878.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3879.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3879.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3880.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3880.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3881.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3881.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3882.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3882.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3883.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3883.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3884.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3884.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3885.JPG", showFront: false},
-    {matched: false, img: "./img/IMG_3885.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3877.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3877.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3878.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3878.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3879.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3879.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3880.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3880.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3881.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3881.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3882.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3882.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3883.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3883.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3884.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3884.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3885.JPG", showFront: false},
+    {matched: false, img: "img/IMG_3885.JPG", showFront: false},
   ]; 
-  const backOfCard = "../img/vecteezy_flowers-clipart-design-illustration_9385587.jpg"
+  const backOfCard = "img/vecteezy_flowers-clipart-design-illustration_9385587.jpg"
   let score;
   let shuffledCards;
   let card1;
