@@ -14,8 +14,7 @@ Concentration is often used to improve memory or as an educational game for youn
 ![Xmas-Easy700x525](https://github.com/Bbgaston20/Concentration-Game/assets/161114724/7582c75a-8a25-41e5-b9d4-8edfbd4f766a)
 
 
-[Concentration Game Site](https://bbgaston20.github.io/
-Concentration-Game/)
+[Concentration Game](https://bbgaston20.github.io/Concentration-Game/)
 
 ### Attributes Used: 
 [Confetti Animation](https://codepen.io/lilianqian/pen/OxzeyZ)
