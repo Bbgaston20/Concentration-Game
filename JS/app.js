@@ -80,8 +80,8 @@ const cards = [
 function render() {
   shuffledCards.forEach((card, ind) => {
     const cardEl = document.getElementById(ind)
-    if (card.matched || card.showFront) cardEl.innerHTML = `<img class = "front-img" src= "${card.img}"/>`
-    else cardEl.innerHTML = `<img class= "back-img" src= "${backOfCard}"/>`
+    if (card.matched || card.showFront) cardEl.innerHTML = `<img class = "front-img" src= "${card.img}" alt="Sanrio character"/>`
+    else cardEl.innerHTML = `<img class= "back-img" src= "${backOfCard}" alt="Pink cartoon flower"/>`
   });
   scoreEl.innerHTML = score
   if (winner === true) {
